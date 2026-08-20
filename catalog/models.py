@@ -32,6 +32,7 @@ class Deployment(models.Model):
     environment=models.ForeignKey(Environment,on_delete=models.CASCADE,related_name="deployments")
     image_tag=models.CharField(max_length=100,blank=True)
     status=models.CharField(max_length=20,choices=STATUS_CHOICES,default="pending")
+    triggered_by=models.CharField(max_length=100,blank=True)
     last_synced_at=models.DateTimeField(null=True,blank=True)
     updated_at=models.DateTimeField(auto_now=True)
     created_at=models.DateTimeField(auto_now_add=True)
