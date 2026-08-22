@@ -76,15 +76,12 @@ WSGI_APPLICATION = 'devportal.wsgi.application'
 
 DATABASES = { 
     'default': { 
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': os.environ.get('MYSQL_DATABASE', 'devportal'), 
-        'USER': os.environ.get('MYSQL_USER', 'devportal_user'), 
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD', '1'), 
-        'HOST': os.environ.get('MYSQL_HOST', 'localhost'), 
-        'PORT': os.environ.get('MYSQL_PORT', '3306'), 
-        'OPTIONS': { 
-            'charset': 'utf8mb4', 
-        }, 
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': os.environ.get('POSTGRES_DB', 'devportal'), 
+        'USER': os.environ.get('POSTGRES_USER', 'devportal_user'), 
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', '1'), 
+        'HOST': os.environ.get('POSTGRES_HOST', 'localhost'), 
+        'PORT': os.environ.get('POSTGRES_PORT', '5432'), 
     } 
 }
 
